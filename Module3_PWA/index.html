@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Demo App</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>PWA Demo App</h1>
+        <p>Experience the power of Progressive Web Apps!</p>
+    </header>
+    <main>
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li>Offline Support</li>
+                <li>Fast Loading</li>
+                <li>Installable on Home Screen</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Try it Out</h2>
+            <p>This demo works offline! Turn off your internet connection and refresh the page.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 PWA Demo App</p>
+    </footer>
+</body>
+</html>
